@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYSTIC TAROT - 신비로운 타로 카드</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Main Screen -->
+        <div id="main-screen" class="screen active">
+            <div class="main-content">
+                <h1 class="main-logo">MYSTIC TAROT</h1>
+                <p class="main-subtitle">신비로운 타로의 세계로</p>
+                <button class="btn btn--primary btn--lg" id="start-game">게임 시작</button>
+            </div>
+        </div>
+
+        <!-- Spread Selection Screen -->
+        <div id="spread-screen" class="screen">
+            <div class="spread-content">
+                <h2>스프레드 선택</h2>
+                <p class="spread-subtitle">원하는 카드 배치를 선택하세요</p>
+                <div class="spread-options">
+                    <div class="spread-card" data-spread="one-card">
+                        <div class="card-back-placeholder"></div>
+                        <div class="spread-info">
+                            <h3>원 카드</h3>
+                            <p>하나의 질문에 대한 간단한 답변</p>
+                        </div>
+                        <div class="tooltip">오늘의 운세나 간단한 질문에 적합합니다</div>
+                    </div>
+                    <div class="spread-card" data-spread="three-card">
+                        <div class="card-back-placeholder"></div>
+                        <div class="spread-info">
+                            <h3>쓰리 카드</h3>
+                            <p>과거-현재-미래의 흐름</p>
+                        </div>
+                        <div class="tooltip">과거의 영향, 현재 상황, 미래 전망을 확인합니다</div>
+                    </div>
+                    <div class="spread-card" data-spread="celtic-cross">
+                        <div class="card-back-placeholder"></div>
+                        <div class="spread-info">
+                            <h3>켈틱 크로스</h3>
+                            <p>복잡한 상황의 종합적 분석</p>
+                        </div>
+                        <div class="tooltip">10장의 카드로 상황을 자세히 분석합니다</div>
+                    </div>
+                </div>
+                <button class="btn btn--secondary" id="back-to-main">메인으로</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <h2 id="spread-title">카드 스프레드</h2>
+                <div class="game-controls">
+                    <button class="btn btn--secondary" id="reshuffle">다시 섞기</button>
+                    <button class="btn btn--outline" id="back-to-spread">스프레드 선택</button>
+                </div>
+            </div>
+
+            <div class="game-area">
+                <div id="card-positions" class="card-positions">
+                    <!-- 카드 슬롯들이 동적으로 생성됨 -->
+                </div>
+                
+                <div class="deck-area">
+                    <div id="card-deck" class="card-deck">
+                        <div class="deck-placeholder"></div>
+                    </div>
+                    <button class="btn btn--primary" id="shuffle-cards">카드 섞기</button>
+                </div>
+            </div>
+
+            <div id="card-detail" class="card-detail">
+                <h3 id="card-name">카드를 선택하세요</h3>
+                <div id="card-description">
+                    <p>카드를 클릭하면 상세 정보가 표시됩니다.</p>
+                </div>
+                <div id="card-count" class="card-count">공개된 카드: 0/0</div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-content">
+                <h2>타로 리딩 결과</h2>
+                <div id="results-summary"></div>
+                <div id="comprehensive-reading" class="comprehensive-reading">
+                    <h3>종합 해석</h3>
+                    <div id="comprehensive-content"></div>
+                </div>
+                <div class="results-actions">
+                    <button class="btn btn--primary" id="play-again">다시 하기</button>
+                    <button class="btn btn--secondary" id="new-spread">다른 스프레드</button>
+                    <button class="btn btn--outline" id="copy-reading">해석 복사</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading indicator -->
+        <div id="loading" class="loading hidden">
+            <div class="loading-spinner"></div>
+            <p>타로 데이터를 불러오는 중...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
